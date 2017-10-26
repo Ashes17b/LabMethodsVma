@@ -15,17 +15,22 @@
       <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="80" column="27" lean-forward="true" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+            <state relative-caret-position="310">
+              <caret line="141" column="48" lean-forward="false" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
               <folding>
                 <element signature="method#output#0;class#main#0" expanded="false" />
                 <element signature="method#output#1;class#main#0" expanded="false" />
+                <element signature="method#output#2;class#main#0" expanded="false" />
                 <element signature="method#transposeMatrix#0;class#main#0" expanded="false" />
                 <element signature="method#multiplicar#0;class#main#0" expanded="false" />
+                <element signature="method#multiplicar#1;class#main#0" expanded="false" />
                 <element signature="method#norma#0;class#main#0" expanded="false" />
                 <element signature="method#norma#1;class#main#0" expanded="false" />
                 <element signature="method#calculateB#0;class#main#0" expanded="false" />
                 <element signature="method#calculateG#0;class#main#0" expanded="false" />
+                <element signature="method#commonStep#0;class#main#0" expanded="false" />
+                <element signature="method#mthdSmpl#0;class#main#0" expanded="false" />
+                <element signature="method#mthdRelax#0;class#main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,7 +72,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="64" />
-    <option name="y" value="-11" />
+    <option name="y" value="-779" />
     <option name="width" value="1303" />
     <option name="height" value="780" />
   </component>
@@ -229,19 +234,19 @@
       <workItem from="1508804188655" duration="1046000" />
       <workItem from="1508859340984" duration="19290000" />
       <workItem from="1508932707157" duration="3938000" />
+      <workItem from="1509018216092" duration="3279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31923000" />
+    <option name="totallyTimeSpent" value="35202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="64" y="-779" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -264,6 +269,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -276,7 +282,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -288,12 +294,17 @@
           <folding>
             <element signature="method#output#0;class#main#0" expanded="false" />
             <element signature="method#output#1;class#main#0" expanded="false" />
+            <element signature="method#output#2;class#main#0" expanded="false" />
             <element signature="method#transposeMatrix#0;class#main#0" expanded="false" />
             <element signature="method#multiplicar#0;class#main#0" expanded="false" />
+            <element signature="method#multiplicar#1;class#main#0" expanded="false" />
             <element signature="method#norma#0;class#main#0" expanded="false" />
             <element signature="method#norma#1;class#main#0" expanded="false" />
             <element signature="method#calculateB#0;class#main#0" expanded="false" />
             <element signature="method#calculateG#0;class#main#0" expanded="false" />
+            <element signature="method#commonStep#0;class#main#0" expanded="false" />
+            <element signature="method#mthdSmpl#0;class#main#0" expanded="false" />
+            <element signature="method#mthdRelax#0;class#main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -305,12 +316,17 @@
           <folding>
             <element signature="method#output#0;class#main#0" expanded="false" />
             <element signature="method#output#1;class#main#0" expanded="false" />
+            <element signature="method#output#2;class#main#0" expanded="false" />
             <element signature="method#transposeMatrix#0;class#main#0" expanded="false" />
             <element signature="method#multiplicar#0;class#main#0" expanded="false" />
+            <element signature="method#multiplicar#1;class#main#0" expanded="false" />
             <element signature="method#norma#0;class#main#0" expanded="false" />
             <element signature="method#norma#1;class#main#0" expanded="false" />
             <element signature="method#calculateB#0;class#main#0" expanded="false" />
             <element signature="method#calculateG#0;class#main#0" expanded="false" />
+            <element signature="method#commonStep#0;class#main#0" expanded="false" />
+            <element signature="method#mthdSmpl#0;class#main#0" expanded="false" />
+            <element signature="method#mthdRelax#0;class#main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -322,29 +338,61 @@
           <folding>
             <element signature="method#output#0;class#main#0" expanded="false" />
             <element signature="method#output#1;class#main#0" expanded="false" />
+            <element signature="method#output#2;class#main#0" expanded="false" />
             <element signature="method#transposeMatrix#0;class#main#0" expanded="false" />
             <element signature="method#multiplicar#0;class#main#0" expanded="false" />
+            <element signature="method#multiplicar#1;class#main#0" expanded="false" />
             <element signature="method#norma#0;class#main#0" expanded="false" />
             <element signature="method#norma#1;class#main#0" expanded="false" />
             <element signature="method#calculateB#0;class#main#0" expanded="false" />
             <element signature="method#calculateG#0;class#main#0" expanded="false" />
+            <element signature="method#commonStep#0;class#main#0" expanded="false" />
+            <element signature="method#mthdSmpl#0;class#main#0" expanded="false" />
+            <element signature="method#mthdRelax#0;class#main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="80" column="27" lean-forward="true" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#output#0;class#main#0" expanded="false" />
             <element signature="method#output#1;class#main#0" expanded="false" />
+            <element signature="method#output#2;class#main#0" expanded="false" />
             <element signature="method#transposeMatrix#0;class#main#0" expanded="false" />
             <element signature="method#multiplicar#0;class#main#0" expanded="false" />
+            <element signature="method#multiplicar#1;class#main#0" expanded="false" />
             <element signature="method#norma#0;class#main#0" expanded="false" />
             <element signature="method#norma#1;class#main#0" expanded="false" />
             <element signature="method#calculateB#0;class#main#0" expanded="false" />
             <element signature="method#calculateG#0;class#main#0" expanded="false" />
+            <element signature="method#commonStep#0;class#main#0" expanded="false" />
+            <element signature="method#mthdSmpl#0;class#main#0" expanded="false" />
+            <element signature="method#mthdRelax#0;class#main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="141" column="48" lean-forward="false" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
+          <folding>
+            <element signature="method#output#0;class#main#0" expanded="false" />
+            <element signature="method#output#1;class#main#0" expanded="false" />
+            <element signature="method#output#2;class#main#0" expanded="false" />
+            <element signature="method#transposeMatrix#0;class#main#0" expanded="false" />
+            <element signature="method#multiplicar#0;class#main#0" expanded="false" />
+            <element signature="method#multiplicar#1;class#main#0" expanded="false" />
+            <element signature="method#norma#0;class#main#0" expanded="false" />
+            <element signature="method#norma#1;class#main#0" expanded="false" />
+            <element signature="method#calculateB#0;class#main#0" expanded="false" />
+            <element signature="method#calculateG#0;class#main#0" expanded="false" />
+            <element signature="method#commonStep#0;class#main#0" expanded="false" />
+            <element signature="method#mthdSmpl#0;class#main#0" expanded="false" />
+            <element signature="method#mthdRelax#0;class#main#0" expanded="false" />
           </folding>
         </state>
       </provider>

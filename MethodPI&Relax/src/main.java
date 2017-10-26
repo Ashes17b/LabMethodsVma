@@ -1,7 +1,11 @@
 import java.util.Random;
 
 public class main {
+    private static int k = 0;
+    private static double ke = 0;
     private static double q = 0.1;
+    private static double qOptimal = q;
+    private static int remIteration = Integer.MAX_VALUE;
 
     public static void output(double[][] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -15,6 +19,10 @@ public class main {
         for (int i = 0; i < vector.length; i++)
             System.out.println(vector[i]);
         System.out.println();
+    }
+    public static void output(double[] a, double[] b) {
+        for (int i = 0; i < a.length; i++)
+            System.out.println("X = " + a[i] + " Answer = " + b[i]);
     }
 
     public static double[][] transposeMatrix(double [][] arr){
@@ -72,7 +80,7 @@ public class main {
     }
 
     public static void main(String[] args) {
-        int n = 3;
+        int n = 20;
         Random r = new Random();
 
         System.out.println("Create matrix with diagonal prevalence:");
@@ -118,15 +126,23 @@ public class main {
         double[] arrT_f = multiplicar(arrT, f);
         output(arrT_f);
 
-        /*for (q = 0.1; q < 2; q += 0.1) {
+        commonStep(arr, f);
+        commonStep(arrT_arr, arrT_f);
+
+        mthdSmpl(arr, f, 1e-7, x);
+
+        for (q = 0.1; q < 2; q += 0.1) {
             q = Math.rint(q * 10.0) / 10.0;
             mthdRelax(arrT_arr, arrT_f, 1e-7, x);
-        }*/
-        mthdSmpl(arr, f, 1e-7, x);
+        }
+        System.out.println("qOptimal = " + qOptimal);
+        double tmp = qOptimal;
+        for (q = tmp + 0.01; q < tmp + 0.10; q += 0.01) {
+            q = Math.rint(q * 100.0) / 100.0;
+            mthdRelax(arrT_arr, arrT_f, 1e-7, x);
+        }
+        System.out.println("qNextOptimal = " + qOptimal);
     }
-
-    private static int k = 0;
-    private static double ke = 0;
 
     public static double[][] calculateB(double[][] a) {
         int n = a.length;
@@ -150,19 +166,24 @@ public class main {
         return g;
     }
 
-    private static void mthdSmpl(double[][] arr, double[] f, double eps, double[] answer) {
-        int n = arr.length;
-        double[] x = new double[n];
-
-        // Find b[i][j]
+    private static void commonStep(double[][] arr, double[] f) {
+        /** Finding b[i][j] for matrix B */
         System.out.println("Matrix B:");
         double[][] B = calculateB(arr);
         output(B);
 
-        // Find g[i]
+        /** Finding g[i] of vector G*/
         System.out.println("Vector g:");
         double[] g = calculateG(arr, f);
         output(g);
+    }
+
+    private static void mthdSmpl(double[][] arr, double[] f, double eps, double[] answer) {
+        int n = arr.length;
+        double[] x = new double[n];
+
+        double[][] B = calculateB(arr);
+        double[] g = calculateG(arr, f);
 
         while(true) {
             k++;
@@ -183,14 +204,14 @@ public class main {
             for (int i = 0; i < n; i++)
                 test[i] = curX[i] - answer[i];
 
-            //System.out.println("Grades method:");
+            /** Method evaluation
             double rightGrade = (Math.pow(norma(B), k + 1) * norma(g)) / (1 - norma(B));
-            //System.out.println("Norma(test) = " + norma(test));
-            //System.out.println("RightGrade = " + rightGrade);
+            System.out.println("Norma(test) = " + norma(test));
+            System.out.println("RightGrade = " + rightGrade);
             if (norma(test) <= rightGrade)
                 System.out.println("Good");
             else
-                System.out.println("Bad");
+                System.out.println("Bad"); */
 
             if (norma(error) <= eps)
                 break;
@@ -198,62 +219,58 @@ public class main {
             x = curX;
         }
 
+        /** Calculation k(e) */
         ke = Math.log10((eps * (1 - norma(B))) / norma(g)) / Math.log10(norma(B));
 
-        System.out.println("Create vector of exact solutions:");
-        output(answer);
-        System.out.println("Iterations: " + k);
+        System.out.println("\nIterations: " + k);
         System.out.println("Norma ||B|| = " + norma(B));
         System.out.println("Norma ||g|| = " + norma(g));
         System.out.println("K(e) iterations: " + ke);
         System.out.println("Calculate vector answers:");
-        output(x);
+        output(answer, x);
     }
 
     private static void mthdRelax(double[][] arrT_arr, double[] arrT_f, double eps, double[] answer) {
         int n = arrT_arr.length;
         double[] x = new double[n];
 
-        // Find b[i][j]
-        System.out.println("Matrix B:");
         double[][] B = calculateB(arrT_arr);
-        output(B);
-
-        // Find g[i]
-        System.out.println("Vector g:");
         double[] g = calculateG(arrT_arr, arrT_f);
-        output(g);
 
-            k = 0;
-            while (true) {
-                k++;
-                double[] curX = new double[n];
+        k = 0;
+        while (true) {
+            k++;
+            double[] curX = new double[n];
 
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n; j++) {
-                        if (j < i)
-                            curX[i] += B[i][j] * curX[j];
-                        else
-                            curX[i] += B[i][j] * x[j];
-                    }
-                    curX[i] += g[i];
-                    curX[i] = (1 - q) * x[i] + q * curX[i];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (j < i)
+                        curX[i] += B[i][j] * curX[j];
+                    else
+                        curX[i] += B[i][j] * x[j];
                 }
+                curX[i] += g[i];
+                curX[i] = (1 - q) * x[i] + q * curX[i];
+            }
 
-                double[] error = new double[n];
-                for (int i = 0; i < n; i++)
-                    error[i] = curX[i] - x[i];
+            double[] error = new double[n];
+            for (int i = 0; i < n; i++)
+                error[i] = curX[i] - x[i];
 
-                if ((norma(error) / q) <= eps)
-                    break;
+            if ((norma(error) / q) <= eps)
+                break;
 
-                x = curX;
+            x = curX;
+        }
+
+        if (remIteration >= k) {
+            remIteration = k;
+            qOptimal = q;
         }
 
         System.out.println("\nIterations = " + k);
         System.out.println("q  = " + q);
         System.out.println("Calculate vector answers:");
-        for (int i = 0; i < n; i++)
-            System.out.println("X = " + answer[i] + " Answer = " + x[i]);
+        output(answer, x);
     }
 }
