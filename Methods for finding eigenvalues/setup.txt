@@ -1,0 +1,4 @@
+How to Run:
+1) Install and downloading numpy
+2) With python3 run Methods for finding euqenvalues.py
+3) Check result in output files
