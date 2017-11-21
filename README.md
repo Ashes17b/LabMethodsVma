@@ -1,2 +1,2 @@
 # LabMethodsVma
-Polevikov Victor Kuzmich(OS Linux, Programming language Java)
+Polevikov Victor Kuzmich(OS Linux, Programming language Java and Python)
